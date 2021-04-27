@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 void childTask(){
-    char name[40];
+    char name[30];
     printf("Enter name : ");
     fgets(name, sizeof(name), stdin);
     printf("\nMy name is ");
@@ -17,13 +17,14 @@ exit(0);
 void parentTask(){
     printf("Parent process => PID==%d\n", getpid());
     printf("All child process is finished!\n");
+    printf("Job is done\n");
 }
 
 void waiting(){
       printf("Waiting for child process to finished…");
       wait(NULL);
       printf("Child process finished");
-      printf("\n ");
+      printf("\n");
 }
 
 int main(void){
